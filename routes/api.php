@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get("/test-me", function () {
-    return 'Hello from Laravel!';
+Route::middleware(['auth:sanctum', 'admin'])->get('/admin', function () {
+    return response()->json(['message' => 'Bienvenue admin']);
 });
